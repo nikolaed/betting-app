@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-2 mt-4">
+          <div class="card">
+            <div class="card-header">
+            <div class="card-title"><h3>Login</h3></div>
+            </div>
+            <div class="card-body">
+            <div *ngIf="isLoginError" class="text-danger center error-message">
+              <i class="fa fa-exclamation-circle" style="color: red;" aria-hidden="true"></i><h5 style="display: inline-block; margin-left: 5px;">Incorrect Username or Password</h5>
+            </div>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                <div class="form-group mt-1">
+                  <label for="loginUsername">Username</label>
+                  <input type="text" name="username" ngModel required #username="ngModel"
+                  class="form-control"
+                  id="loginUsername"
+                  placeholder="Enter username">
+                </div>
+                <div class="form-group mt-1">
+                  <label for="loginPassword">Password</label>
+                  <input type="password" name="password" ngModel required #password="ngModel"
+                  class="form-control" id="loginPassword" placeholder="Password">
+                </div>
+                <button type="submit" [disabled]="f.invalid"
+                        class="btn btn-primary">Login <i class="fa fa-sign-in-alt"></i></button>
+              </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+

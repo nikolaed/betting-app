@@ -1,0 +1,92 @@
+<div class="row">
+<div class="col-8">
+<div class="centerRow">
+    <span>
+    <div class="horizontalBar">
+        <a class="" role="button" data-testid="match-calendar-live" href="#">
+            <div class="square2">
+                <span class="live">LIVE</span>
+            </div>
+        </a>
+        <a class="" role="button" data-testid="match-calendar-link-0"
+        [routerLink]="['prevthree']" routerLinkActive="active" (click)=reloadDate(prevThirdDate)>
+            <div class="square">
+                <div class="desktopDates">{{ prevThird }}</div>
+            </div>
+        </a>
+        <a class="" role="button" data-testid="match-calendar-link-1"
+        [routerLink]="['prevtwo']" routerLinkActive="active" (click)=reloadDate(prevSecondDate)>
+            <div class="square">
+                <div class="desktopDates">{{ prevSecond }}</div>
+            </div>
+        </a>
+        <a class="" role="button" data-testid="match-calendar-link-2"
+        [routerLink]="['prevone']" routerLinkActive="active" (click)=reloadDate(prevFirstDate)>
+            <div class="square">
+                <div class="desktopDates">{{ prevFirst }}</div>
+            </div>
+        </a>
+        <a class="" role="button" data-testid="match-calendar-link-3"
+        [routerLink]="['today']" routerLinkActive="active" (click)=reloadDate(todayzDate)>
+            <div class="square">
+                <div class="desktopDates">TODAY</div>
+            </div>
+        </a>
+        <a class="" role="button" data-testid="match-calendar-link-4"
+        [routerLink]="['tomzone']" routerLinkActive="active" (click)=reloadDate(tomzFirstDate)>
+            <div class="square">
+                <div class="desktopDates">{{ tomzFirst }}</div>
+            </div>
+        </a>
+        <a class="" role="button" data-testid="match-calendar-link-5"
+        [routerLink]="['tomztwo']" routerLinkActive="active" (click)=reloadDate(tomzSecondDate)>
+        
+            <div class="square">
+                <div class="desktopDates">{{ tomzSecond }}</div>
+            </div>
+        </a>
+        <a class="" role="button" data-testid="match-calendar-link-6"
+        [routerLink]="['tomzthree']" routerLinkActive="active" (click)=reloadDate(tomzThirdDate)>
+            <div class="square">
+                <div class="desktopDates">{{ tomzThird }}</div>
+            </div>
+        </a>
+        <span data-test-id="match-calendar-dp-trigger" class="datePicker">
+            <!-- <input type="text" id="datepicker"/> -->
+            <input id="dateOfMatch" name="dateOfMatch" [(ngModel)]="dateOfMatch" format="yyyy-MM-dd" [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }"
+            type="date" bsDatepicker class="form-control" [(bsValue)]="bsValue"
+            (ngModelChange)="changeDate($event)">
+            <!-- <input id="datepicker" name="dateOfMatch" format="yyyy-MM-dd" type="date"> -->
+        </span>
+
+    </div>
+    </span>
+
+
+    <!-- <div *ngIf="loaded">
+    <div class="currentDate">
+        <span>All Matches</span>
+        <span id="todayDate" style="margin-left: 500px;">{{ today | date:'MMMM d'}}</span>
+    </div>
+    <div class="matches" *ngFor="let match of matches">
+        <span class="time">{{ match.time | slice:0:5 }}</span>
+        <span class="middle">
+            <span class="home">{{ match.localTeamName }}</span>
+            <span class="score" style="margin-left: 20px;">{{ match.localTeamScore }}-{{ match.visitorTeamScore }}</span>
+            <span class="away" style="margin-left: 20px;">{{ match.visitorTeamName }}</span>
+        </span>
+        <span class="star"><button class="star2"><i class="fa fa-star"></i></button></span>
+    </div>
+    </div> -->
+    <!-- <show-by-default *ngIf="loaded" (onHide)="updateValue($event)"></show-by-default> -->
+
+
+
+</div>
+
+<show-by-default [dateTransferred]='dateOfMatch'></show-by-default>
+<!-- <router-outlet></router-outlet> -->
+
+</div>
+</div>
+

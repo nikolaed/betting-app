@@ -1,0 +1,21 @@
+<!-- <p>get-all-matches works!</p> -->
+<a class="" role="button" 
+         routerLinkActive="active" [routerLink]="['create']">Create New Match</a>
+<br>
+<br>
+<div class="currentDate">
+    <span>All Matches</span>
+    <!-- <span id="todayDate" style="margin-left: 500px;">{{ dateTransferred | date:'MMMM d'}}</span> -->
+</div>
+<div class="matches" *ngFor="let match of matches">
+    <span class="time">{{ match.time | slice:0:5 }}</span>
+    <span class="middle">
+        <span class="home">{{ match.localTeamName }}</span>
+        <span class="score" style="margin-left: 20px;">{{ match.localTeamScore }}-{{ match.visitorTeamScore }}</span>
+        <span class="away" style="margin-left: 20px;">{{ match.visitorTeamName }}</span>
+        <span><button style="margin-left: 20px" (click)="updateMatch(match.id)" class="btn btn-info btn-sm" >Edit</button></span>
+        <span><button style="margin-left: 10px;" (click)="deleteMatch(match.id)" class="btn btn-danger btn-sm">Delete</button></span>
+    </span>
+    <span class="star"><button class="star2"><i class="fa fa-star"></i></button></span>
+</div>
+

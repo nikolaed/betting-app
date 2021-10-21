@@ -1,0 +1,53 @@
+.matches {
+    position: relative;
+    border-bottom: 1px solid rgb(33, 33, 33);
+    font-size: 11px;
+    color: rgb(170, 170, 170);
+}
+
+// .time {
+//     //flex: 0 0 50px;
+//     // margin: auto 0px;
+//     //display: flex;
+//     //flex-direction: row;
+//     // -webkit-box-pack: center;
+//     // justify-content: center;
+//     //position: relative;
+//     // -webkit-box-align: center;
+//     // align-items: center;
+//     //color: rgb(170, 170, 170);
+//     //padding-left: 0px;
+// }
+
+.middle {
+    margin-left: 230px;
+    //width: 100%;
+    //display: flex;
+    //-webkit-box-align: center;
+    //align-items: center;
+}
+
+.star {
+    margin-left: 704px;
+    bottom: 0px;
+}
+
+.star2 {
+    display: flex-horizontal;
+    transform: translateY(-70%);
+
+    //position: absolute;
+    //right: 0px;
+    //top: 50%;
+    //transform: translateY(-50%);
+    //margin-top: 0px;
+    //cursor: pointer;
+}
+.star2:hover{
+    background-color: orange;
+}
+
+.active{
+    color: green;
+	font-weight: bold;
+}

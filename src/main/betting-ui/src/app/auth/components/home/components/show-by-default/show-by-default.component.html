@@ -1,0 +1,14 @@
+<div class="currentDate">
+    <span>All Matches</span>
+    <span id="todayDate" style="margin-left: 500px;">{{ dateTransferred | date:'MMMM d'}}</span>
+</div>
+<div class="matches" *ngFor="let match of matches">
+    <span class="time">{{ match.time | slice:0:5 }}</span>
+    <span class="middle">
+        <span class="home">{{ match.localTeamName }}</span>
+        <span class="score" style="margin-left: 20px;">{{ match.localTeamScore }}-{{ match.visitorTeamScore }}</span>
+        <span class="away" style="margin-left: 20px;">{{ match.visitorTeamName }}</span>
+    </span>
+    <span class="star"><button class="star2"><i class="fa fa-star"></i></button></span>
+</div>
+<!-- <p>{{ dateTransferred }}</p> -->

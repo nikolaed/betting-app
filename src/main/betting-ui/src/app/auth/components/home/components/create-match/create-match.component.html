@@ -1,0 +1,78 @@
+<h3>Create Match</h3>
+<div [hidden]="submitted" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="id">Match Id</label>
+        <input type="number" class="form-control" id="id" required [(ngModel)]="match.id" name="id">
+      </div>
+  
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="text" class="form-control" id="date" required [(ngModel)]="match.date" name="date">
+      </div>
+  
+      <div class="form-group">
+        <label for="league">League Id</label>
+        <input type="number" class="form-control" id="league" required [(ngModel)]="match.league" name="league">
+      </div>
+
+      <div class="form-group">
+        <label for="localTeamId">Local Team Id</label>
+        <input type="number" class="form-control" id="localTeamId" required [(ngModel)]="match.localTeamId" name="localTeamId">
+      </div>
+
+      <div class="form-group">
+        <label for="localTeamName">Local Team Name</label>
+        <input type="text" class="form-control" id="localTeamName" required [(ngModel)]="match.localTeamName" name="localTeamName">
+      </div>
+
+      <div class="form-group">
+        <label for="localTeamScore">Local Team Score</label>
+        <input type="number" class="form-control" id="localTeamScore" required [(ngModel)]="match.localTeamScore" name="localTeamScore">
+      </div>
+
+      <div class="form-group">
+        <label for="minute">Minute</label>
+        <input type="number" class="form-control" id="minute" required [(ngModel)]="match.minute" name="minute">
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <input type="text" class="form-control" id="status" required [(ngModel)]="match.status" name="status">
+      </div>
+
+      <div class="form-group">
+        <label for="time">Time</label>
+        <input type="text" class="form-control" id="time" required [(ngModel)]="match.time" name="time">
+      </div>
+
+      <div class="form-group">
+        <label for="visitorTeamId">Visitor Team Id</label>
+        <input type="number" class="form-control" id="visitorTeamId" required [(ngModel)]="match.visitorTeamId" name="visitorTeamId">
+      </div>
+
+      <div class="form-group">
+        <label for="visitorTeamName">Visitor Team Name</label>
+        <input type="text" class="form-control" id="visitorTeamName" required [(ngModel)]="match.visitorTeamName" name="visitorTeamName">
+      </div>
+
+      <div class="form-group">
+        <label for="visitorTeamScore">Visitor Team Score</label>
+        <input type="number" class="form-control" id="visitorTeamScore" required [(ngModel)]="match.visitorTeamScore" name="visitorTeamScore">
+      </div>
+
+      <div class="form-group">
+        <label for="events">Events</label>
+        <input type="text" class="form-control" id="events" required [(ngModel)]="match.events" name="events">
+      </div>
+
+
+  
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+  
+  <div [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+    <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+  </div>

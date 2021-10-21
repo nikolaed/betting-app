@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-2 mt-4">
+          <div class="card">
+            <div class="card-header">
+            <div class="card-title"><h3>Register New User</h3></div>
+            </div>
+            <div class="card-body">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <label for="registerUsername">Username</label>
+                  <input type="text" formControlName="username"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+                  id="registerUsername"
+                  placeholder="Enter username">
+                  <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="registerPassword">Password</label>
+                  <input type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                class="form-control" id="registerPassword" placeholder="Password">
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Username is required</div>
+                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="confirmPassword">Confirm Password</label>
+                  <input type="password" formControlName="confPassword" [ngClass]="{ 'is-invalid': submitted && f.confPassword.errors }"
+                class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                  <div *ngIf="submitted && f.confPassword.errors" class="invalid-feedback">
+                    <div *ngIf="f.confPassword.errors.required">Confirm Password is required</div>
+                    <div *ngIf="f.confPassword.errors.mustMatch">Passwords must match</div>
+                  </div>
+                </div>
+                <button type="submit" [disabled]="f.invalid"
+                class="btn btn-primary">Register <i class="fas fa-sign-in-alt"></i></button>
+              </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
